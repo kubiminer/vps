@@ -1,5 +1,17 @@
-import pandas as pd
-import numpy as np
-d = np.random.normal(100, 30, (10, 3)).astype(np.int)
-df = pd.DataFrame(columns=list('ABC'), data=d)
-print(df)
+import mysql.connector
+
+config = {
+  'user': 'karibu',
+  'password': '9002005',
+  'host': '127.0.0.1',
+  'database': 'wordpress',
+  'raise_on_warnings': True,
+}
+
+cnx = mysql.connector.connect(**config)
+cursor = cnx.cursor()
+
+print(cursor)
+
+
+cnx.close()
