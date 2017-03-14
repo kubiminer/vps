@@ -16,6 +16,8 @@
 <P> start of html</p>
 <form action="upload.php" class="dropzone"></form>
  <P> end of html</p>
+ <P> version 2</p> 
+ 
    
 </body>
  
