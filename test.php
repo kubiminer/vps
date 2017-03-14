@@ -11,7 +11,9 @@ config = {
 cnx = mysql.connector.connect(**config)
 cursor = cnx.cursor()
 
-print(cursor)
+query = 'show tables'
+cursor.execute(query)
 
-
+for table in cursor:
+  print(cursor)
 cnx.close()
