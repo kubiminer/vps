@@ -6,7 +6,7 @@
 <link href="css/dropzone.css" type="text/css" rel="stylesheet" />
  
 <!-- 2 -->
-<script src="dropzone.min.js"></script>>
+<script src="dropzone.min.js"></script>
  
 </head>
  
@@ -19,4 +19,4 @@
    
 </body>
  
-</html>>
+</html>
