@@ -13,7 +13,9 @@
 <body>
  
 <!-- 3 -->
+<P> start of html</p>
 <form action="upload.php" class="dropzone"></form>
+ <P> end of html</p>
    
 </body>
  
