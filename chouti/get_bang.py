@@ -22,7 +22,7 @@ if __name__ == '__main__':
           
     #log_file.write(list_to_string(dicts))
 
-    query = dict_to_query(dicts, 'chouti')
+    query = dict_to_query(dicts, 'chouti'))
     print(len(query))
     #log_file.write('<html>/n') 
     #log_file.write(list_to_string(query))
