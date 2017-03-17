@@ -1,3 +1,8 @@
+import json, re
+from mysql.connector import MySQLConnection, Error
+from configparser import ConfigParser
+import urllib.request
+
 def get_rebang_json(page_num):
     url = 'http://m.chouti.com/m/link/more.do?type=hot&page={page}&limit=recent'.format(page=page_num)
     print('searching web: ', url)
