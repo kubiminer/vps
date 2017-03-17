@@ -20,13 +20,13 @@ if __name__ == '__main__':
     dicts = get_rebang_json(10)
     print(len(dicts)
           
-    log_file.write(list_to_string(dicts))
+    #log_file.write(list_to_string(dicts))
 
     query = dict_to_query(dicts, 'chouti')
-
-    log_file.write('<html>/n') 
-    log_file.write(list_to_string(query))
-    log_file.write('</html>') 
+    print(len(query))
+    #log_file.write('<html>/n') 
+    #log_file.write(list_to_string(query))
+    #log_file.write('</html>') 
     
     log_file.close()
     conn.close()
