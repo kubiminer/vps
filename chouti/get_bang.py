@@ -12,7 +12,7 @@ if __name__ == '__main__':
     print(dicts)
 
     query = dict_to_query(dicts, 'chouti')
-    log_file = open('log_file.html', 'w') 
+    log_file = open('/var/www/html/log.html', 'w') 
     log_file.write('<html>') 
     log_file.write(query) 
     log_file.write('</html>') 
