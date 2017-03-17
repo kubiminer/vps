@@ -11,5 +11,9 @@ if __name__ == '__main__':
     dicts = get_rebang_json(1)
     print(dicts)
 
-    query = dict_to_query(dicts, table_name)
-    print(query, 'chouti')
+    query = dict_to_query(dicts, 'chouti')
+    log_file = open('log_file.html', 'w') 
+    log_file.write('<html>') 
+    log_file.write(query) 
+    log_file.write('</html>') 
+    log_file.close()
