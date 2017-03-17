@@ -17,7 +17,9 @@ if __name__ == '__main__':
 
     log_file = open(log_file, 'w', encoding="utf-8") 
 
-    dicts = get_rebang_json(1)
+    dicts = get_rebang_json(10)
+    print(len(dicts)
+          
     log_file.write(list_to_string(dicts))
 
     query = dict_to_query(dicts, 'chouti')
