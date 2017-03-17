@@ -8,12 +8,16 @@ if __name__ == '__main__':
 	
     conn = establish_mysql_connect(mysql_config_file, False)
 
+    log_file = open('/var/www/html/log.html', 'w', encoding="utf-8") 
+	
     dicts = get_rebang_json(1)
-    print(dicts)
+    log_file.write(dicts)
 
     query = dict_to_query(dicts, 'chouti')
-    log_file = open('/var/www/html/log.html', 'w') 
-    log_file.write('<html>') 
+
+    log_file.write('<html>/n') 
     log_file.write(query) 
     log_file.write('</html>') 
     log_file.close()
+
+   conn.close()
