@@ -46,7 +46,6 @@ def establish_mysql_connect(config_file, echo=True):
     """ Connect to MySQL database """
  
     db_config = read_db_config(config_file, 'mysql')
-    print(db_config)
  
     try:
         print_echo('Connecting to MySQL database...')
