@@ -11,7 +11,7 @@ if __name__ == '__main__':
     log_file = open('/var/www/html/log.html', 'w', encoding="utf-8") 
 	
     dicts = get_rebang_json(1)
-    log_file.write(dicts)
+    log_file.write(str(dicts))
 
     query = dict_to_query(dicts, 'chouti')
 
