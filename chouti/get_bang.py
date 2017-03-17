@@ -19,5 +19,5 @@ if __name__ == '__main__':
     log_file.write(query) 
     log_file.write('</html>') 
     log_file.close()
-
-   conn.close()
+    
+    conn.close()
