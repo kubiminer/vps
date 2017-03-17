@@ -1,5 +1,5 @@
 # constant defination
-mysql_config_file = 'home/karibu/.conf/mysql_config.ini'
+mysql_config_file = '/home/karibu/.conf/mysql_config.ini'
 
 from chouti_scrape_host import establish_mysql_connect
 
