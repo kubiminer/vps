@@ -1,7 +1,7 @@
 # constant defination
 mysql_config_file = '/home/karibu/.conf/mysql_config.ini'
 
-from chouti_scrape_host import establish_mysql_connect
+from chouti_scrape_host import establish_mysql_connect, get_rebang_json, dict_to_query
 
 # main Program
 if __name__ == '__main__':
