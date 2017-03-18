@@ -28,7 +28,7 @@ def read_db_config(filename='mysql_config.ini', section='mysql'):
     return db
 
 # establishing mysql conection
-def establish_mysql_connect(config_file, echo=True):
+def mysql_connect(config_file, echo=True):
     def print_echo(text):
         if echo: print(text)
 
@@ -50,6 +50,19 @@ def establish_mysql_connect(config_file, echo=True):
     except Error as error:
         print(error)
         return False
+
+
+def mysql_insert(conn, query):
+    query = query
+    conn = conn
+    try:
+        cursor = conn.cursor()
+        cursor.execute(query)
+        conn.commit()
+        return True
+    except Error as error:
+        return error
+
 
 # getting rebang json by urllib.request method
 def get_rebang_json(page_num):
