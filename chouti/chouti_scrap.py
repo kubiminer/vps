@@ -84,11 +84,13 @@ def dict_to_query(dict_list, table_name):
 class Log():
     def __init__(self, filename='log.txt', mode='w'):
         self.handle = open(filename, mode, encoding='utf-8')
+        self.handle.write('<meta charset="utf-8" /> \n <html>')
         self.handle.write(self.now() + filename + 'opened in ' + mode + ' mode' + '\n')
     def write(self, text):
         self.handle.write(self.now() + str(text) + '\n')
     def close(self):
         self.handle.write(self.now() + "log closed" + '\n')
+        self.handle.write('<\html>')
         self.handle.close()
     def now(self):
         return time.strftime('%Y-%m-%D %H:%M.%S >>> ', time.localtime())
