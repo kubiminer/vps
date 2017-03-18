@@ -12,7 +12,7 @@ if __name__ == '__main__':
     print('length of records', len(dicts))
     log.write(dicts)
 
-    query = cs.dict_to_query(dicts, 'chouti')
+    query = cs.dict_to_query(dicts, 'bang')
     print('length of query', len(query))
     log.write(query)
 
