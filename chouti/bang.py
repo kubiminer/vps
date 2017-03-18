@@ -16,8 +16,9 @@ if __name__ == '__main__':
     print('length of query', len(query))
     log.write(query)
 
-    conn = cs.mysql_connect(mysql_config_file, False)
+    conn = cs.mysql_connect(mysql_config_file)
     echo =  "connect to mysql" + str(conn)
+    print(echo)
     log.write(echo)
 
     log.close()
