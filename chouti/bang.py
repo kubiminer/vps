@@ -2,13 +2,10 @@ import chouti_scrap as cs
 
 # constant defination
 mysql_config_file = '/home/karibu/.conf/mysql_config.ini'
-log_file = '/var/www/html/log.html' #/var/www/html/
+log_file = '/var/www/html/log.html'
 
 # main Program
 if __name__ == '__main__':
-
-    #conn = establish_mysql_connect(mysql_config_file, False)
-
     log = cs.Log(log_file)
 
     dicts = cs.get_rebang_json(1)
@@ -16,9 +13,12 @@ if __name__ == '__main__':
     log.write(dicts)
 
     query = cs.dict_to_query(dicts, 'chouti')
-
     print('length of query', len(query))
     log.write(query)
 
+    conn = cs.mysql_connect(mysql_config_file, False)
+    echo =  "connect to mysql" + str(conn)
+    log.write(echo)
+
     log.close()
-    #conn.close()
+    conn.close()
