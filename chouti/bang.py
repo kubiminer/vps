@@ -13,12 +13,10 @@ if __name__ == '__main__':
     conn = cs.mysql_connect(mysql_config_file)
 
     for query, dict in zip(querys, dicts):
-        res = cs.mysql_insert(conn, query)
-        if res:
-            print(dict['id'], ' insert success')
-        else:
-            print(dict['id'], 'insert failed')
-            print(dict.keys())
+        err = cs.mysql_insert(conn, query)
+        if err is not None:
+            print(dict['id'], err)
+            for key in dict.keys(): print(key)
     log.write('page {} added to database!'.format(page_num))
     log.close()
     conn.close()
