@@ -48,10 +48,9 @@ def mysql_insert(conn, query):
         cursor = conn.cursor()
         cursor.execute(query)
         conn.commit()
-        return True
+        return None
     except Error as error:
-        print(error)
-        return False
+        return error
 
 # getting rebang json by urllib.request method
 def get_rebang_json(page_num):
