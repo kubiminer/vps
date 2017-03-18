@@ -7,27 +7,17 @@ log_file = '/var/www/html/log.html'
 # main Program
 if __name__ == '__main__':
     log = cs.Log(log_file)
-
-    dicts = cs.get_rebang_json(1)
-    print('length of records', len(dicts))
-    log.write(dicts)
-
-    query = cs.dict_to_query(dicts, 'bang')
-    print('length of query', len(query))
-    log.write(query)
-
+    page_num = 1
+    dicts = cs.get_rebang_json(page_num)
+    querys = cs.dict_to_query(dicts, 'bang')
     conn = cs.mysql_connect(mysql_config_file)
-    echo =  "connected to mysql. " + str(conn)
-    print(echo)
-    log.write(echo)
 
-    query = query[0]
-    if cs.mysql_insert(conn, query):
-        print('insert success')
-    else:
-        print('insert failed')
-
-
-
+    for query in querys:
+        res = cs.mysql_insert(conn, query)
+        if res:
+            print('insert success')
+        else:
+            print('insert failed')
+    log.write('page {} added to database!'.format(page_num))
     log.close()
     conn.close()
