@@ -51,7 +51,7 @@ def mysql_connect(config_file, echo=True):
         print(error)
         return False
 
-
+# insert into database
 def mysql_insert(conn, query):
     query = query
     conn = conn
@@ -61,7 +61,8 @@ def mysql_insert(conn, query):
         conn.commit()
         return True
     except Error as error:
-        return error
+        print(error)
+        return False
 
 
 # getting rebang json by urllib.request method
